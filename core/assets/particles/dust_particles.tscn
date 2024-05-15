@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2v43ymugremx"]
+
+[ext_resource type="Texture2D" uid="uid://1nkndpy02ski" path="res://core/assets/particles/PNG (Transparent)/circle_05.png" id="1_1811t"]
+[ext_resource type="Script" path="res://core/assets/particles/dust_particles.gd" id="2_370mj"]
+
+[sub_resource type="Curve" id="Curve_acco1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.328125, 0.307692), 0.0, 0.0, 0, 0, Vector2(0.75, 0.285714), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_utum1"]
+curve = SubResource("Curve_acco1")
+
+[sub_resource type="Curve" id="Curve_43a0q"]
+_data = [Vector2(0, 0.725275), 0.0, 0.0, 0, 0, Vector2(0.601562, 0.978022), 0.0, 0.0, 0, 0, Vector2(1, 0.78022), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gulk3"]
+curve = SubResource("Curve_43a0q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vkbm7"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 300, 1)
+direction = Vector3(0.1, 0, 0)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0.1, 0)
+linear_accel_min = 1.0
+linear_accel_max = 20.0
+attractor_interaction_enabled = false
+scale_min = 0.05
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_gulk3")
+alpha_curve = SubResource("CurveTexture_utum1")
+turbulence_enabled = true
+turbulence_noise_scale = 15.0
+turbulence_influence_min = 0.05
+turbulence_influence_max = 0.123
+
+[node name="DustParticles" type="GPUParticles2D"]
+position = Vector2(582, 325)
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_vkbm7")
+texture = ExtResource("1_1811t")
+lifetime = 6.0
+preprocess = 6.0
+script = ExtResource("2_370mj")

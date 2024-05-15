@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlxc1j0sdvabq"]
+
+[ext_resource type="Script" path="res://core/ui/options_menu/hotkey_rebind_button.gd" id="1_65qhu"]
+[ext_resource type="Theme" uid="uid://810w2dhuww4v" path="res://core/ui/main_menu/main_menu_theme.tres" id="2_b76a4"]
+
+[node name="HotkeyRebindButton" type="Control" node_paths=PackedStringArray("label", "button") groups=["hotkey_button"]]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_65qhu")
+label = NodePath("HBoxContainer/Label")
+button = NodePath("HBoxContainer/Button")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_right = 454.0
+offset_bottom = 45.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme = ExtResource("2_b76a4")
+text = "ACTION"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_b76a4")
+toggle_mode = true
+text = "ACTION KEY"

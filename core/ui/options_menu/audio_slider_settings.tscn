@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci0u4h7k1f5nh"]
+
+[ext_resource type="Script" path="res://core/ui/options_menu/audio_slider_settings.gd" id="1_ro8vm"]
+[ext_resource type="Theme" uid="uid://810w2dhuww4v" path="res://core/ui/main_menu/main_menu_theme.tres" id="2_yb2yr"]
+
+[node name="AudioSliderSettings" type="Control" node_paths=PackedStringArray("audio_name_label", "audio_number_label", "h_slider")]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ro8vm")
+audio_name_label = NodePath("HBoxContainer/AudioNameLabel")
+audio_number_label = NodePath("HBoxContainer/AudioNumberLabel")
+h_slider = NodePath("HBoxContainer/HSlider")
+bus_name = "Master"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_constants/separation = 42
+alignment = 1
+
+[node name="AudioNameLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_yb2yr")
+text = "Master Volume"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_yb2yr")
+max_value = 1.0
+step = 0.01
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="AudioNumberLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+theme = ExtResource("2_yb2yr")
+text = "99.2%"
+vertical_alignment = 1

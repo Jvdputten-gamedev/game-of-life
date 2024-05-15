@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmmk31d282i46"]
+
+[ext_resource type="Script" path="res://core/credits/credits.gd" id="1_fsowh"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsowh")
+bg_color = Color(0, 0, 0.0784314, 1)
+title_color = Color(0.521569, 0.752941, 0.584314, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+
+[node name="CreditsContainer" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 713.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]
+[b]Programmers[/b]
+Programmer Name 1
+Programmer Name 2
+
+[b]Art[/b]
+Artist Name
+
+[b]Music[/b]
+Musician Name
+
+[b]Sound Effects[/b]
+SFX Name
+
+[b]Testers[/b]
+Name 1
+Name 2
+Name 3
+
+[b]Tools used[/b]
+Developed with Godot Engine
+[url=https://godotengine.org/license]https://godotengine.org/license[/url]
+
+Art created with My Favourite Art Program
+[url=https://myfavouriteartprogram.com]https://myfavouriteartprogram.com[/url]
+
+[b]Special thanks[/b]
+My parents
+My friends
+My pet rabbit
+
+[/center]"
+fit_content = true

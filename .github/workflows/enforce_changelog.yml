@@ -1,0 +1,25 @@
+name: Changelog Check
+
+on:
+  pull_request:
+    paths:
+      - 'CHANGELOG.md'
+
+jobs:
+  changelog_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Check for changes in CHANGELOG.md
+        run: |
+          if git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep '^CHANGELOG.md$'
+          then
+            echo "CHANGELOG.md has been modified."
+          else
+            echo "CHANGELOG.md has not been modified."
+            exit 1
+          fi

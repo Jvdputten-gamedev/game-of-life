@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://810w2dhuww4v"]
+
+[sub_resource type="SystemFont" id="SystemFont_sl731"]
+font_names = PackedStringArray("Impact")
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = SubResource("SystemFont_sl731")

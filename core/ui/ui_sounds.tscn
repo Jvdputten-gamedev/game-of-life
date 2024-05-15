@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://n048s53sgpce"]
+
+[ext_resource type="Script" path="res://core/ui/ui_sounds.gd" id="1_xfflg"]
+[ext_resource type="AudioStream" uid="uid://pvyp5rcuf4qr" path="res://core/assets/SFX/hover.mp3" id="2_3js70"]
+[ext_resource type="AudioStream" uid="uid://dpcsv6q7wb0c5" path="res://core/assets/SFX/click.mp3" id="2_rltf6"]
+
+[node name="UiSounds" type="Node" node_paths=PackedStringArray("click_sound", "hover_sound")]
+script = ExtResource("1_xfflg")
+click_sound = NodePath("ClickSound")
+hover_sound = NodePath("HoverSound")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rltf6")
+bus = &"Sfx"
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3js70")
+bus = &"Sfx"
