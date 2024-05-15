@@ -1,17 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg3at4kb0vcf6"]
+[gd_scene load_steps=6 format=3 uid="uid://bg3at4kb0vcf6"]
 
 [ext_resource type="Script" path="res://core/ui/main_menu/main_menu.gd" id="1_ideyw"]
+[ext_resource type="Texture2D" uid="uid://daou605ij2e3t" path="res://core/bg.png" id="2_yvdj6"]
 [ext_resource type="Theme" uid="uid://810w2dhuww4v" path="res://core/ui/main_menu/main_menu_theme.tres" id="3_y0waf"]
 [ext_resource type="PackedScene" uid="uid://crsbep170ksff" path="res://core/ui/options_menu/options_menu.tscn" id="4_myujj"]
-[ext_resource type="PackedScene" uid="uid://d2v43ymugremx" path="res://core/assets/particles/dust_particles.tscn" id="4_odl7t"]
-
-[sub_resource type="Gradient" id="Gradient_uavnr"]
-colors = PackedColorArray(0.658607, 0.799061, 0.855164, 1, 0.521569, 0.752941, 0.584314, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_magtn"]
-gradient = SubResource("Gradient_uavnr")
-fill_from = Vector2(0.465812, 0.0726496)
-fill_to = Vector2(0.452991, 0.948718)
 
 [sub_resource type="SystemFont" id="SystemFont_t882a"]
 font_names = PackedStringArray("Impact")
@@ -33,14 +25,18 @@ main_menu_container = NodePath("MainMenuContainer")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -229.5
+offset_right = 229.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_magtn")
-
-[node name="DustParticles" parent="." instance=ExtResource("4_odl7t")]
+texture = ExtResource("2_yvdj6")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="MainMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -68,7 +64,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = SubResource("SystemFont_t882a")
 theme_override_font_sizes/font_size = 64
-text = "GAME TITLE"
+text = "Game of life"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenuContainer"]
 layout_mode = 2
